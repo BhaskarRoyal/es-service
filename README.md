@@ -1,2 +1,0 @@
-# es-service
-Entittlement-Service
