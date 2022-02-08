@@ -14,4 +14,9 @@ public class ApiConroller {
 		return "UP";
 	}
 
+	
+	@GetMapping("/")
+	public String index(){
+		return "Welcome to Azure Devops tutorial";
+	}
 }
