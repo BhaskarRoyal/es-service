@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
 public class ApiConroller {
 	
 	
@@ -14,4 +13,9 @@ public class ApiConroller {
 		return "UP";
 	}
 
+	
+	@GetMapping("/")
+	public String index(){
+		return "Welcome to Azure Devops tutorial";
+	}
 }
