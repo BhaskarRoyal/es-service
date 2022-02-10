@@ -126,19 +126,49 @@
 				</executions>
 			</plugin>
 			<plugin>
-               <groupId>org.springframework.boot</groupId>
-               <artifactId>spring-boot-maven-plugin</artifactId>
-               <configuration>
-                    <mainClass>com.phc.es.Application</mainClass>
-               </configuration>
-             <executions>
-                <execution>
-                   <goals>
-                        <goal>repackage</goal>
-                    </goals>
-                </execution>
-              </executions>
-           </plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.phc.es.Application</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<version>2.2.0</version>
+				<configuration>
+					<subscriptionId>9b5c9f4d-f7f3-411d-be99-4d77c21ee16d</subscriptionId>
+					<resourceGroup>devopsazurecourse</resourceGroup>
+					<appName>gs-springboot</appName>
+					<pricingTier>Free</pricingTier>
+					<region>Central US</region>
+					<runtime>
+						<os>Linux</os>
+						<webContainer>Java SE</webContainer>
+						<javaVersion>Java 8</javaVersion>
+					</runtime>
+					<deployment>
+						<resources>
+							<resource>
+								<type>jar</type>
+								<directory>${project.basedir}/target</directory>
+								<includes>
+									<include>*.jar</include>
+								</includes>
+							</resource>
+						</resources>
+					</deployment>
+				</configuration>
+			</plugin>
+		
 		</plugins>
 	</build>
 </project>
