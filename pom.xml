@@ -119,7 +119,7 @@
 						after unit tests have been run. -->
 					<execution>
 						<id>post-unit-test</id>
-						<phase>package</phase>
+						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
